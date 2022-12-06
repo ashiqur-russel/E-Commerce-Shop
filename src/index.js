@@ -5,16 +5,19 @@ import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import ProductProvider from "./contexts/ProductProvider";
 import SidebarContextProvider from "./contexts/SidebarContextProvider";
+import CartContextProvider from "./contexts/CartContextProvider";
 //product provider
 const root = ReactDOM.createRoot(document.getElementById("root"));
 //sidebar context
 root.render(
   <SidebarContextProvider>
-    <ProductProvider>
-      <React.StrictMode>
-        <App />
-      </React.StrictMode>
-    </ProductProvider>
+    <CartContextProvider>
+      <ProductProvider>
+        <React.StrictMode>
+          <App />
+        </React.StrictMode>
+      </ProductProvider>
+    </CartContextProvider>
   </SidebarContextProvider>
 );
 
