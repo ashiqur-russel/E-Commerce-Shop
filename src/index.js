@@ -4,14 +4,18 @@ import "./index.css";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import ProductProvider from "./contexts/ProductProvider";
+import SidebarContextProvider from "./contexts/SidebarContextProvider";
 //product provider
 const root = ReactDOM.createRoot(document.getElementById("root"));
+//sidebar context
 root.render(
-  <React.StrictMode>
+  <SidebarContextProvider>
     <ProductProvider>
-      <App />
+      <React.StrictMode>
+        <App />
+      </React.StrictMode>
     </ProductProvider>
-  </React.StrictMode>
+  </SidebarContextProvider>
 );
 
 // If you want to start measuring performance in your app, pass a function
