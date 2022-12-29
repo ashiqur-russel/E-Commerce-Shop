@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { IoMdClose, IoMdRemove, IoMdAdd } from "react-icons/io";
 import { CartContext } from "../contexts/CartContextProvider";
 const CartItem = ({ product }) => {
-  const { removeItem } = useContext(CartContext);
+  const { removeItem, increaseItem, decreaseItem } = useContext(CartContext);
   //desctrutring the product
   const { id, title, image, price, amount } = product;
   return (
@@ -33,7 +33,9 @@ const CartItem = ({ product }) => {
             <div className="flex flex-1 p-2  max-w-[100px] h-full border text-primary font-mediumitems-center">
               <div className="flex-1 h-full flex justify-center items-center cursor-pointer">
                 {" "}
-                <IoMdRemove></IoMdRemove>
+                <IoMdRemove
+                  onClick={() => decreaseItem(product.id)}
+                ></IoMdRemove>
               </div>
               <div className="flex justify-center h-full items-center px-2">
                 {" "}
@@ -41,7 +43,7 @@ const CartItem = ({ product }) => {
               </div>
               <div className="flex-1 h-full flex justify-center items-center cursor-pointer">
                 {" "}
-                <IoMdAdd></IoMdAdd>
+                <IoMdAdd onClick={() => increaseItem(product.id)}></IoMdAdd>
               </div>
             </div>
             <div className="flex  justify-between w-full">

@@ -33,13 +33,14 @@ const Sidebar = () => {
         ))}
       </div>
       {cart.length > 0 && (
-        <div>
-          <div className="bg-pink-200 flex w-full justify-between items-center">
-            <div>
-              <span>Totoal:</span> 1000 €
+        <div className="bg-pink-200 flex flex-col gap-y-3 py-4 mt-4">
+          <div className="flex w-full justify-between items-center">
+            <div className="flex items-center">
+              <span className="p-2 uppercase font-semibold mr-2">Total:</span>{" "}
+              <span className="mr-2">100</span> €
             </div>
 
-            <div className="cursor:pointer py-4 bg-rose-500 text-white w-12 h-12 justify-center items-center text-xl">
+            <div className="cursor:pointer py-4 bg-rose-500 text-white w-12 h-12 flex justify-center items-center text-xl">
               <FiTrash2 onClick={clearCart}></FiTrash2>
             </div>
           </div>

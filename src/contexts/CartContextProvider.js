@@ -37,9 +37,53 @@ const CartContextProvider = ({ children }) => {
     setCart([]);
   };
 
+  // Increase item amount
+
+  const increaseItem = (id) => {
+    console.log("Amount increased : ", id);
+
+    const cartItem = cart.find((item) => {
+      return item.id === id;
+    });
+
+    addToCart(cartItem, id);
+  };
+
+  const decreaseItem = (id) => {
+    console.log("Amount decreased : ", id);
+    const cartItem = cart.find((item) => {
+      return item.id === id;
+    });
+
+    if (cartItem) {
+      const newCart = [...cart].map((item) => {
+        if (item.id === id) {
+          return { ...item, amount: cartItem.amount - 1 };
+        } else {
+          return item;
+        }
+      });
+      setCart(newCart);
+    }
+    if (cartItem.amount <= 1) {
+      removeItem(id);
+    }
+  };
+
+  //Decrease item amount
+
   console.log(cart);
   return (
-    <CartContext.Provider value={{ addToCart, cart, removeItem, clearCart }}>
+    <CartContext.Provider
+      value={{
+        addToCart,
+        cart,
+        removeItem,
+        clearCart,
+        increaseItem,
+        decreaseItem,
+      }}
+    >
       {children}
     </CartContext.Provider>
   );
