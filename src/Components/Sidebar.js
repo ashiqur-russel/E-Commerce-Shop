@@ -9,8 +9,6 @@ const Sidebar = () => {
   const { isOpen, handleClose } = useContext(SidebarContext);
   const { cart } = useContext(CartContext);
 
-  console.log("sidebar cart ", cart);
-
   return (
     <div
       className={`${
