@@ -7,7 +7,7 @@ import CartItem from "./CartItem";
 
 const Sidebar = () => {
   const { isOpen, handleClose } = useContext(SidebarContext);
-  const { cart } = useContext(CartContext);
+  const { cart, clearCart } = useContext(CartContext);
 
   return (
     <div
@@ -27,10 +27,24 @@ const Sidebar = () => {
           <IoMdArrowForward />
         </div>{" "}
       </div>
-      <div>Cart Item</div>
-      {cart.map((product) => (
-        <CartItem key={product.id} product={product}></CartItem>
-      ))}
+      <div>
+        {cart.map((product) => (
+          <CartItem key={product.id} product={product}></CartItem>
+        ))}
+      </div>
+      {cart.length > 0 && (
+        <div>
+          <div className="bg-pink-200 flex w-full justify-between items-center">
+            <div>
+              <span>Totoal:</span> 1000 €
+            </div>
+
+            <div className="cursor:pointer py-4 bg-rose-500 text-white w-12 h-12 justify-center items-center text-xl">
+              <FiTrash2 onClick={clearCart}></FiTrash2>
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 };
