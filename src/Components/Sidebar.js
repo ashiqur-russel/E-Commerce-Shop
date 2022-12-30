@@ -7,7 +7,7 @@ import CartItem from "./CartItem";
 
 const Sidebar = () => {
   const { isOpen, handleClose } = useContext(SidebarContext);
-  const { cart, clearCart } = useContext(CartContext);
+  const { cart, clearCart, totalPrice } = useContext(CartContext);
 
   return (
     <div
@@ -37,7 +37,10 @@ const Sidebar = () => {
           <div className="flex w-full justify-between items-center">
             <div className="flex items-center">
               <span className="p-2 uppercase font-semibold mr-2">Total:</span>{" "}
-              <span className="mr-2">100</span> €
+              <span className="mr-2 font-bold">
+                {parseFloat(totalPrice).toFixed(2)}
+              </span>{" "}
+              €
             </div>
 
             <div className="py-4 mx-2  bg-rose-500 text-white w-12 h-12 flex justify-center items-center text-xl cursor-pointer hover:bg-red-600">
