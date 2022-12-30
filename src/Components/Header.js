@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { SidebarContext } from "../contexts/SidebarContextProvider";
 import { BsBag } from "react-icons/bs";
 import Logo from "./../img/logo2.png";
@@ -10,8 +10,18 @@ const Header = () => {
   const { isOpen, setIsOpen } = useContext(SidebarContext);
   const { itemAmount, cart } = useContext(CartContext);
 
+  useEffect(() => {
+    window.addEventListener("scroll", () => {
+      window.scrollY > 60 ? setIsActive(true) : setIsActive(false);
+    });
+  }, []);
+
   return (
-    <header className={`${isActive ? "bg-blue-50 p-4" : "bg-red-200 p-4"}`}>
+    <header
+      className={`${
+        isActive ? "bg-blue-50 p-4" : "bg-red-200 p-4"
+      } fixed w-full z-10 transition-all`}
+    >
       <div className="container mx-auto flex justify-between items-center h-full w-full">
         <div>
           <Link to={"/"}>
