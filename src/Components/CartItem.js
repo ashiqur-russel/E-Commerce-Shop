@@ -31,7 +31,7 @@ const CartItem = ({ product }) => {
           </div>
           <div className="flex items-center gap-x-2 h-[36px] text-sm">
             <div className="flex flex-1 p-2  max-w-[100px] h-full border text-primary font-mediumitems-center">
-              <div className="flex-1 h-full flex justify-center items-center cursor-pointer">
+              <div className="flex-1  flex justify-center items-center cursor-pointer">
                 {" "}
                 <IoMdRemove
                   onClick={() => decreaseItem(product.id)}
@@ -41,7 +41,7 @@ const CartItem = ({ product }) => {
                 {" "}
                 {amount}{" "}
               </div>
-              <div className="flex-1 h-full flex justify-center items-center cursor-pointer">
+              <div className="flex-1 flex justify-center items-center cursor-pointer">
                 {" "}
                 <IoMdAdd onClick={() => increaseItem(product.id)}></IoMdAdd>
               </div>

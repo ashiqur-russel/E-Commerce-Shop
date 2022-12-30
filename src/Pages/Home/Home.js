@@ -14,8 +14,8 @@ const Home = () => {
   return (
     <div>
       <section className="py-16">
-        <div className="container mx-auto">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 xl:grid-cols-5 p-3 gap-3 mx-w-sm mx-auto md:max-w-none">
+        <div className="container mx-auto ">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 xl:grid-cols-5 p-3 gap-3 mx-w-sm mx-auto md:max-w-none overflow-x-scroll">
             {filterdProducts.map((product) => (
               <Products key={product.id} product={product} />
             ))}

@@ -13,7 +13,7 @@ const Sidebar = () => {
     <div
       className={`${
         isOpen ? "right-0" : "-right-full"
-      } w-full bg-white top-0 h-full fixed shadow-2xl md:w-[35vw] xl:max-w-[30vw] duration-300 z-20 px-4 md:px-[35px] lg:px-[35px]`}
+      } w-full bg-white top-0 h-full fixed shadow-2xl md:w-[35vw] xl:max-w-[30vw]  duration-300 z-20 px-4 md:px-[35px] lg:px-[35px] overflow-scroll`}
     >
       <div className="flex items-center justify-between py-6 border-b ">
         <div className="uppercase text-xm font-semibold">
@@ -33,14 +33,14 @@ const Sidebar = () => {
         ))}
       </div>
       {cart.length > 0 && (
-        <div className="bg-pink-200 flex flex-col gap-y-3 py-4 mt-4">
+        <div className="flex flex-col gap-y-3 py-4 mt-4">
           <div className="flex w-full justify-between items-center">
             <div className="flex items-center">
               <span className="p-2 uppercase font-semibold mr-2">Total:</span>{" "}
               <span className="mr-2">100</span> €
             </div>
 
-            <div className="cursor:pointer py-4 bg-rose-500 text-white w-12 h-12 flex justify-center items-center text-xl">
+            <div className="py-4 mx-2  bg-rose-500 text-white w-12 h-12 flex justify-center items-center text-xl cursor-pointer hover:bg-red-600">
               <FiTrash2 onClick={clearCart}></FiTrash2>
             </div>
           </div>
