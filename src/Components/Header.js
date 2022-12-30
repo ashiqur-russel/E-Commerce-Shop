@@ -19,7 +19,7 @@ const Header = () => {
   return (
     <header
       className={`${
-        isActive ? "bg-blue-50 p-4" : "bg-red-200 p-4"
+        isActive ? "bg-white py shadow-md" : "bg-none py-6"
       } fixed w-full z-10 transition-all`}
     >
       <div className="container mx-auto flex justify-between items-center h-full w-full">
@@ -34,8 +34,8 @@ const Header = () => {
           onClick={() => setIsOpen(!isOpen)}
         >
           <BsBag className="text-2xl" />{" "}
-          <div className="absolute bg-red-800 text-white rounded-full text-[12px] -right-0 -bottom-2 flex justify-center items-center w-[14px] h-[14 px]">
-            {cart.length}
+          <div className="absolute bg-red-800 text-white rounded-full text-[12px] -right-0 -bottom-2 flex justify-center items-center w-[14px] h-[14px]">
+            {itemAmount}
           </div>
         </span>
       </div>
