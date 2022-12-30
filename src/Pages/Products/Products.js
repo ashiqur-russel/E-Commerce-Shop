@@ -1,4 +1,4 @@
-import React, { useState, useContext } from "react";
+import React, { useContext } from "react";
 import { BsPlus, BsEyeFill } from "react-icons/bs";
 import { Link } from "react-router-dom";
 import { CartContext } from "../../contexts/CartContextProvider";

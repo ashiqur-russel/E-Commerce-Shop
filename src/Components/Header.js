@@ -8,7 +8,7 @@ import { Link } from "react-router-dom";
 const Header = () => {
   const [isActive, setIsActive] = useState(true);
   const { isOpen, setIsOpen } = useContext(SidebarContext);
-  const { itemAmount, cart } = useContext(CartContext);
+  const { itemAmount } = useContext(CartContext);
 
   useEffect(() => {
     window.addEventListener("scroll", () => {
@@ -19,7 +19,7 @@ const Header = () => {
   return (
     <header
       className={`${
-        isActive ? "bg-white py shadow-md" : "bg-none py-6"
+        isActive ? "bg-white py-6 shadow-md" : "bg-none py-6"
       } fixed w-full z-10 transition-all`}
     >
       <div className="container mx-auto flex justify-between items-center h-full w-full">

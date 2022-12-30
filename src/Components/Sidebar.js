@@ -1,6 +1,6 @@
 import React, { useContext } from "react";
 import { SidebarContext } from "../contexts/SidebarContextProvider";
-import { IoMdArrowForward, IoMdClose } from "react-icons/io";
+import { IoMdArrowForward } from "react-icons/io";
 import { FiTrash2 } from "react-icons/fi";
 import { CartContext } from "../contexts/CartContextProvider";
 import CartItem from "./CartItem";
