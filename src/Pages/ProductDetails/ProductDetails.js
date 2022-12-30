@@ -23,8 +23,8 @@ const ProductDetails = () => {
   console.log(product);
   return (
     <section className="pt-32 pb-12 lg:py-32 h-screen flex items-center">
-      <div className="container mx-auto">
-        <div className="flex flex-col lg:flex-row items-center">
+      <div className="container mx-auto px-10">
+        <div className="flex flex-col lg:flex-row items-center ">
           <div className="flex  flex-1 justify-center items-center mb-8 lg:mb-0">
             <img src={image} alt="" className="max-w-[200px] lg:mx-w-sm" />
           </div>
@@ -35,10 +35,10 @@ const ProductDetails = () => {
             <div className="text-xl text-red-500 font-medium mb-5">
               {price} €
             </div>
-            <p className="mb-8">{description}</p>
+            <p className="mb-8 w-[70%]">{description}</p>
             <button
               onClick={() => addToCart(product, product.id)}
-              className="bg-primary py-4 px-8 text-white mb-4"
+              className="bg-primary py-4 px-8 text-white mb-10"
             >
               Add to cart
             </button>

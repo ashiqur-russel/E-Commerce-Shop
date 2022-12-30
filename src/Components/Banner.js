@@ -6,7 +6,7 @@ const Banner = () => {
   return (
     <section className="py-16 bg-rose-100 h-[600px]">
       <div className="container mx-auto flex items-center justify-around h-full relative">
-        <div className="flex-1 flex-col gap-10">
+        <div className="flex-1 flex-col gap-10 px-10 ">
           <div className="font-semibold flex flex-row items-center uppercase ">
             <div className="w-10 h-[2px] bg-red-500 mr-3"></div>
             <div>New Trend</div>
@@ -26,7 +26,7 @@ const Banner = () => {
             </span>
           </Link>
         </div>
-        <div className=" hidden lg:block absolute -bottom-16 -right-3">
+        <div className=" hidden lg:block absolute -bottom-16 -right-0">
           <img className="w-[300px] h-[auto]" src={Model} alt="" />
         </div>
       </div>
