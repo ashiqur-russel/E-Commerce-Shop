@@ -5,7 +5,7 @@ import { ProductContext } from "../../contexts/ProductProvider";
 
 const ProductDetails = () => {
   const { id } = useParams();
-  const { cart, addToCart } = useContext(CartContext);
+  const { addToCart } = useContext(CartContext);
   const { products } = useContext(ProductContext);
   // single product based on id
   console.log(products);
@@ -29,7 +29,7 @@ const ProductDetails = () => {
             <img src={image} alt="" className="max-w-[200px] lg:mx-w-sm" />
           </div>
           <div className="flex-1 text-center lg:text-left">
-            <h1 className="text-[26px] font-medium mb-2 max-w-[450px] mx-auto">
+            <h1 className="text-[26px] font-medium mb-2 max-w-[450px] mx-auto lg:mx-0">
               {title}
             </h1>
             <div className="text-xl text-red-500 font-medium mb-5">
